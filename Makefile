@@ -1,3 +1,6 @@
+run_crossbarfx:
+	docker-compose up crossbarfx
+
 config_upload:
 	scp .crossbar/config.json \
 		ubuntu@lojack1.crossbario.com:~/scm/crossbario/lojack/node1/.crossbar/
@@ -20,6 +23,9 @@ cert_upload:
 	scp ${HOME}/.lego/certificates/lojack1.crossbario.com.crt \
 		ubuntu@lojack1.crossbario.com:~/scm/crossbario/lojack/node1/.crossbar/
 
+dhparam_generate:
+	openssl dhparam -2 4096 -out ./node1/.crossbar/dhparam.pem
+
 dhparam_upload:
-	scp .crossbar/dhparam.pem \
+	scp ./node1/.crossbar/dhparam.pem \
 		ubuntu@lojack1.crossbario.com:~/scm/crossbario/lojack/node1/.crossbar/

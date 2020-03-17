@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# TLS stuff
+*.crt
+*.key
+*.pem
+key.*
+*.zip
