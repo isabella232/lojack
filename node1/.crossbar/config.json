@@ -67,7 +67,14 @@
                             "role": "anonymous"
                         }
                     }
-                },
+                }
+            ]
+        },
+        {
+            "type": "proxy",
+            "options": {
+            },
+            "transports": [
                 {
                     "type": "web",
                     "endpoint": {
@@ -112,9 +119,20 @@
                             "type": "nodeinfo"
                         },
                         "ws": {
-                            "type": "websocket",
+                            "type": "websocket-proxy",
                             "serializers": [
                                 "cbor", "msgpack", "json"
+                            ],
+                            "backends": [
+                                {
+                                    "type": "rawsocket",
+                                    "endpoint": {
+                                        "type": "unix",
+                                        "path": "rtr1.sock"
+                                    },
+                                    "url": "ws://localhost",
+                                    "serializers": ["cbor"]
+                                }
                             ],
                             "options": {
                                 "allowed_origins": ["*"],
