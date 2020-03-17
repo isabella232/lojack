@@ -1,5 +1,9 @@
+
 run_crossbarfx:
 	docker-compose up crossbarfx
+
+config_generate:
+	python generate_config.py
 
 config_upload:
 	scp .crossbar/config.json \
