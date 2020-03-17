@@ -4,7 +4,6 @@ services:
     crossbarfx:
         # https://hub.docker.com/r/crossbario/crossbarfx/tags?page=1&name=20.3.1
         image: crossbario/crossbarfx:pypy-slim-amd64-20.3.1
-        user: "1000:1000"
         restart: always
         environment:
             - CE_DISABLE=1

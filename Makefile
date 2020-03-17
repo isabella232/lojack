@@ -6,7 +6,7 @@ config_generate:
 	python generate_config.py
 
 config_upload:
-	scp .crossbar/config.json \
+	scp ./node1/.crossbar/config.json \
 		ubuntu@lojack1.crossbario.com:~/scm/crossbario/lojack/node1/.crossbar/
 
 cert_update:
