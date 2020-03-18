@@ -1,6 +1,8 @@
 import os
-import datetime
+
+from autobahn.twisted.util import sleep
 from autobahn.twisted.component import Component, run
+from autobahn.wamp.types import RegisterOptions, CallResult
 
 CBURL = os.environ.get('CBURL', 'wss://lojack1.crossbario.com/ws')
 CBREALM = os.environ.get('CBREALM', 'dvl1')
@@ -12,18 +14,23 @@ component = Component(transports=CBURL, realm=CBREALM)
 async def joined(session, details):
     print("session joined:", details)
 
-    def now(details=None):
-        now = datetime.datetime.utcnow()
-        return now.strftime("%Y-%m-%dT%H:%M:%SZ")
-
     def echo(*args, **kwargs):
-        details = kwargs.pop('details', None)
+        _ = kwargs.pop('details', None)
+        kwargs['pid'] = os.getpid()
         return CallResult(*args, **kwargs)
 
-    await session.register(now, 'com.lojack.now')
-    await session.register(echo, 'com.lojack.echo')
+    await session.register(echo, 'com.lojack.echo',
+                          options=RegisterOptions(invoke='random'))
 
     print("session ready!")
+
+    counter = 100
+    while counter:
+        res = await session.call('com.lojack.echo', counter,
+                                 msg='Hello from {}'.format(os.getpid()))
+        print(res)
+        await sleep(1)
+        counter -= 1
 
 
 if __name__ == "__main__":

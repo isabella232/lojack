@@ -14,6 +14,16 @@ run_crossbarfx_config4:
 	docker-compose up crossbarfx_config4
 
 
+run_backend:
+	CBURL=ws://lojack1.crossbario.com/ws python backend/client.py
+
+run_backend_secure:
+	CBURL=wss://lojack1.crossbario.com/ws python backend/client.py
+
+run_backend_local:
+	CBURL=ws://localhost/ws python backend/client.py
+
+
 download_exe:
 	cd /tmp && rm -f ./crossbarfx-latest && \
 		wget https://download.crossbario.com/crossbarfx/linux-amd64/crossbarfx-latest && \
