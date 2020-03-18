@@ -77,6 +77,9 @@ services:
         # https://hub.docker.com/r/crossbario/autobahn-python/tags?page=1&name=pypy3-20.2.1
         image: crossbario/autobahn-python:pypy3-20.2.1
         restart: always
+        environment:
+            - CBREALM=dvl1
+            - CBURL=ws://localhost/ws
         network_mode: host
         volumes:
             - "${PWD}/backend:/app:rw"
