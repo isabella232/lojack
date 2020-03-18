@@ -10,13 +10,18 @@ run_crossbarfx_config2:
 run_crossbarfx_config3:
 	docker-compose up crossbarfx_config3
 
+run_crossbarfx_config4:
+	docker-compose up crossbarfx_config4
+
+
 download_exe:
 	cd /tmp && rm -f ./crossbarfx-latest && \
 		wget https://download.crossbario.com/crossbarfx/linux-amd64/crossbarfx-latest && \
 		chmod +x ./crossbarfx-latest && sudo cp ./crossbarfx-latest /usr/local/bin/crossbarfx
 	$(CROSSBARFX) version
 
-configs: config1 config2 config3
+
+configs: config1 config2 config3 config4
 
 config1:
 	python generate_config.py config1.json
@@ -30,9 +35,14 @@ config3:
 	python generate_config.py config3.json
 	$(CROSSBARFX) edge check --cbdir=./node1/.crossbar/ --config=config3.json
 
-config_upload:
-	scp ./node1/.crossbar/config.json \
+config4:
+	python generate_config.py config4.json
+	$(CROSSBARFX) edge check --cbdir=./node1/.crossbar/ --config=config4.json
+
+configs_upload: configs
+	scp ./node1/.crossbar/config*.json \
 		ubuntu@lojack1.crossbario.com:~/scm/crossbario/lojack/node1/.crossbar/
+
 
 cert_update:
 	AWS_REGION=us-east-1 $(LEGO) \

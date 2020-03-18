@@ -311,8 +311,53 @@
                     },
                     "paths": {
                         "/": {
-                            "type": "redirect",
-                            "url": "https://lojack1.crossbario.com"
+                            "type": "nodeinfo"
+                        },
+                        "ws": {
+                            "type": "websocket-proxy",
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "backends": [
+                                {
+                                    "type": "rawsocket",
+                                    "endpoint": {
+                                        "type": "unix",
+                                        "path": "rtr1.sock"
+                                    },
+                                    "url": "ws://localhost",
+                                    "serializer": "cbor"
+                                }
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            },
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            }
                         }
                     }
                 },
@@ -335,29 +380,6 @@
                     },
                     "paths": {
                         "/": {
-                            "type": "static",
-                            "directory": "../web",
-                            "options": {
-                                "enable_directory_listing": true
-                            }
-                        },
-                        "autobahn": {
-                            "type": "archive",
-                            "archive": "autobahn-v20.2.1.zip",
-                            "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
-                            "object_prefix": "autobahn-js-browser-20.2.1",
-                            "default_object": "autobahn.min.js",
-                            "download": true,
-                            "cache": true,
-                            "hashes": [
-                               "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
-                            ],
-                            "mime_types": {
-                               ".min.js": "text/javascript",
-                               ".jgz": "text/javascript"
-                            }
-                        },
-                        "info": {
                             "type": "nodeinfo"
                         },
                         "ws": {
@@ -427,8 +449,53 @@
                     },
                     "paths": {
                         "/": {
-                            "type": "redirect",
-                            "url": "https://lojack1.crossbario.com"
+                            "type": "nodeinfo"
+                        },
+                        "ws": {
+                            "type": "websocket-proxy",
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "backends": [
+                                {
+                                    "type": "rawsocket",
+                                    "endpoint": {
+                                        "type": "unix",
+                                        "path": "rtr1.sock"
+                                    },
+                                    "url": "ws://localhost",
+                                    "serializer": "cbor"
+                                }
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            },
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            }
                         }
                     }
                 },
@@ -451,29 +518,6 @@
                     },
                     "paths": {
                         "/": {
-                            "type": "static",
-                            "directory": "../web",
-                            "options": {
-                                "enable_directory_listing": true
-                            }
-                        },
-                        "autobahn": {
-                            "type": "archive",
-                            "archive": "autobahn-v20.2.1.zip",
-                            "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
-                            "object_prefix": "autobahn-js-browser-20.2.1",
-                            "default_object": "autobahn.min.js",
-                            "download": true,
-                            "cache": true,
-                            "hashes": [
-                               "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
-                            ],
-                            "mime_types": {
-                               ".min.js": "text/javascript",
-                               ".jgz": "text/javascript"
-                            }
-                        },
-                        "info": {
                             "type": "nodeinfo"
                         },
                         "ws": {
@@ -543,8 +587,53 @@
                     },
                     "paths": {
                         "/": {
-                            "type": "redirect",
-                            "url": "https://lojack1.crossbario.com"
+                            "type": "nodeinfo"
+                        },
+                        "ws": {
+                            "type": "websocket-proxy",
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "backends": [
+                                {
+                                    "type": "rawsocket",
+                                    "endpoint": {
+                                        "type": "unix",
+                                        "path": "rtr1.sock"
+                                    },
+                                    "url": "ws://localhost",
+                                    "serializer": "cbor"
+                                }
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            },
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            }
                         }
                     }
                 },
@@ -567,29 +656,6 @@
                     },
                     "paths": {
                         "/": {
-                            "type": "static",
-                            "directory": "../web",
-                            "options": {
-                                "enable_directory_listing": true
-                            }
-                        },
-                        "autobahn": {
-                            "type": "archive",
-                            "archive": "autobahn-v20.2.1.zip",
-                            "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
-                            "object_prefix": "autobahn-js-browser-20.2.1",
-                            "default_object": "autobahn.min.js",
-                            "download": true,
-                            "cache": true,
-                            "hashes": [
-                               "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
-                            ],
-                            "mime_types": {
-                               ".min.js": "text/javascript",
-                               ".jgz": "text/javascript"
-                            }
-                        },
-                        "info": {
                             "type": "nodeinfo"
                         },
                         "ws": {
@@ -659,8 +725,53 @@
                     },
                     "paths": {
                         "/": {
-                            "type": "redirect",
-                            "url": "https://lojack1.crossbario.com"
+                            "type": "nodeinfo"
+                        },
+                        "ws": {
+                            "type": "websocket-proxy",
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "backends": [
+                                {
+                                    "type": "rawsocket",
+                                    "endpoint": {
+                                        "type": "unix",
+                                        "path": "rtr1.sock"
+                                    },
+                                    "url": "ws://localhost",
+                                    "serializer": "cbor"
+                                }
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            },
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            }
                         }
                     }
                 },
@@ -683,29 +794,6 @@
                     },
                     "paths": {
                         "/": {
-                            "type": "static",
-                            "directory": "../web",
-                            "options": {
-                                "enable_directory_listing": true
-                            }
-                        },
-                        "autobahn": {
-                            "type": "archive",
-                            "archive": "autobahn-v20.2.1.zip",
-                            "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
-                            "object_prefix": "autobahn-js-browser-20.2.1",
-                            "default_object": "autobahn.min.js",
-                            "download": true,
-                            "cache": true,
-                            "hashes": [
-                               "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
-                            ],
-                            "mime_types": {
-                               ".min.js": "text/javascript",
-                               ".jgz": "text/javascript"
-                            }
-                        },
-                        "info": {
                             "type": "nodeinfo"
                         },
                         "ws": {

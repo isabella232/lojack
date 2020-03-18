@@ -320,7 +320,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {
@@ -352,7 +352,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {
@@ -413,7 +413,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {
@@ -454,7 +454,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {
@@ -515,7 +515,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {
@@ -547,7 +547,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {
@@ -608,7 +608,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {
@@ -649,7 +649,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {
@@ -710,7 +710,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {
@@ -742,7 +742,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {
@@ -803,7 +803,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {
@@ -844,7 +844,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {
@@ -905,7 +905,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {
@@ -937,7 +937,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {
@@ -998,7 +998,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {
@@ -1039,7 +1039,7 @@
                                 "path": "rtr1.sock"
                             },
                             "url": "ws://localhost",
-                            "serializers": ["cbor"]
+                            "serializer": "cbor"
                         }
                     ],
                     "options": {

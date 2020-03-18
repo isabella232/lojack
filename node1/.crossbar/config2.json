@@ -338,6 +338,17 @@
                             "max_message_size": 1048576
                         },
                         "serializers": ["cbor"],
+                        "backends": [
+                            {
+                                "type": "rawsocket",
+                                "endpoint": {
+                                    "type": "unix",
+                                    "path": "rtr1.sock"
+                                },
+                                "url": "ws://localhost",
+                                "serializer": "cbor"
+                            }
+                        ],
                         "auth": {
                             "anonymous": {
                                 "type": "static",
@@ -359,7 +370,7 @@
                                         "path": "rtr1.sock"
                                     },
                                     "url": "ws://localhost",
-                                    "serializers": ["cbor"]
+                                    "serializer": "cbor"
                                 }
                             ],
                             "options": {
@@ -470,6 +481,17 @@
                             "max_message_size": 1048576
                         },
                         "serializers": ["cbor"],
+                        "backends": [
+                            {
+                                "type": "rawsocket",
+                                "endpoint": {
+                                    "type": "unix",
+                                    "path": "rtr1.sock"
+                                },
+                                "url": "ws://localhost",
+                                "serializer": "cbor"
+                            }
+                        ],
                         "auth": {
                             "anonymous": {
                                 "type": "static",
@@ -491,7 +513,7 @@
                                         "path": "rtr1.sock"
                                     },
                                     "url": "ws://localhost",
-                                    "serializers": ["cbor"]
+                                    "serializer": "cbor"
                                 }
                             ],
                             "options": {
@@ -602,6 +624,17 @@
                             "max_message_size": 1048576
                         },
                         "serializers": ["cbor"],
+                        "backends": [
+                            {
+                                "type": "rawsocket",
+                                "endpoint": {
+                                    "type": "unix",
+                                    "path": "rtr1.sock"
+                                },
+                                "url": "ws://localhost",
+                                "serializer": "cbor"
+                            }
+                        ],
                         "auth": {
                             "anonymous": {
                                 "type": "static",
@@ -623,7 +656,7 @@
                                         "path": "rtr1.sock"
                                     },
                                     "url": "ws://localhost",
-                                    "serializers": ["cbor"]
+                                    "serializer": "cbor"
                                 }
                             ],
                             "options": {
@@ -734,6 +767,17 @@
                             "max_message_size": 1048576
                         },
                         "serializers": ["cbor"],
+                        "backends": [
+                            {
+                                "type": "rawsocket",
+                                "endpoint": {
+                                    "type": "unix",
+                                    "path": "rtr1.sock"
+                                },
+                                "url": "ws://localhost",
+                                "serializer": "cbor"
+                            }
+                        ],
                         "auth": {
                             "anonymous": {
                                 "type": "static",
@@ -755,7 +799,7 @@
                                         "path": "rtr1.sock"
                                     },
                                     "url": "ws://localhost",
-                                    "serializers": ["cbor"]
+                                    "serializer": "cbor"
                                 }
                             ],
                             "options": {
