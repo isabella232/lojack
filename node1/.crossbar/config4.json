@@ -311,6 +311,29 @@
                     },
                     "paths": {
                         "/": {
+                            "type": "static",
+                            "directory": "../web",
+                            "options": {
+                                "enable_directory_listing": true
+                            }
+                        },
+                        "autobahn": {
+                            "type": "archive",
+                            "archive": "autobahn-v20.2.1.zip",
+                            "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                            "object_prefix": "autobahn-js-browser-20.2.1",
+                            "default_object": "autobahn.min.js",
+                            "download": true,
+                            "cache": true,
+                            "hashes": [
+                               "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                            ],
+                            "mime_types": {
+                               ".min.js": "text/javascript",
+                               ".jgz": "text/javascript"
+                            }
+                        },
+                        "info": {
                             "type": "nodeinfo"
                         },
                         "ws": {
@@ -380,6 +403,29 @@
                     },
                     "paths": {
                         "/": {
+                            "type": "static",
+                            "directory": "../web",
+                            "options": {
+                                "enable_directory_listing": true
+                            }
+                        },
+                        "autobahn": {
+                            "type": "archive",
+                            "archive": "autobahn-v20.2.1.zip",
+                            "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                            "object_prefix": "autobahn-js-browser-20.2.1",
+                            "default_object": "autobahn.min.js",
+                            "download": true,
+                            "cache": true,
+                            "hashes": [
+                               "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                            ],
+                            "mime_types": {
+                               ".min.js": "text/javascript",
+                               ".jgz": "text/javascript"
+                            }
+                        },
+                        "info": {
                             "type": "nodeinfo"
                         },
                         "ws": {
@@ -449,6 +495,29 @@
                     },
                     "paths": {
                         "/": {
+                            "type": "static",
+                            "directory": "../web",
+                            "options": {
+                                "enable_directory_listing": true
+                            }
+                        },
+                        "autobahn": {
+                            "type": "archive",
+                            "archive": "autobahn-v20.2.1.zip",
+                            "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                            "object_prefix": "autobahn-js-browser-20.2.1",
+                            "default_object": "autobahn.min.js",
+                            "download": true,
+                            "cache": true,
+                            "hashes": [
+                               "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                            ],
+                            "mime_types": {
+                               ".min.js": "text/javascript",
+                               ".jgz": "text/javascript"
+                            }
+                        },
+                        "info": {
                             "type": "nodeinfo"
                         },
                         "ws": {
@@ -518,6 +587,29 @@
                     },
                     "paths": {
                         "/": {
+                            "type": "static",
+                            "directory": "../web",
+                            "options": {
+                                "enable_directory_listing": true
+                            }
+                        },
+                        "autobahn": {
+                            "type": "archive",
+                            "archive": "autobahn-v20.2.1.zip",
+                            "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                            "object_prefix": "autobahn-js-browser-20.2.1",
+                            "default_object": "autobahn.min.js",
+                            "download": true,
+                            "cache": true,
+                            "hashes": [
+                               "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                            ],
+                            "mime_types": {
+                               ".min.js": "text/javascript",
+                               ".jgz": "text/javascript"
+                            }
+                        },
+                        "info": {
                             "type": "nodeinfo"
                         },
                         "ws": {
@@ -587,6 +679,29 @@
                     },
                     "paths": {
                         "/": {
+                            "type": "static",
+                            "directory": "../web",
+                            "options": {
+                                "enable_directory_listing": true
+                            }
+                        },
+                        "autobahn": {
+                            "type": "archive",
+                            "archive": "autobahn-v20.2.1.zip",
+                            "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                            "object_prefix": "autobahn-js-browser-20.2.1",
+                            "default_object": "autobahn.min.js",
+                            "download": true,
+                            "cache": true,
+                            "hashes": [
+                               "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                            ],
+                            "mime_types": {
+                               ".min.js": "text/javascript",
+                               ".jgz": "text/javascript"
+                            }
+                        },
+                        "info": {
                             "type": "nodeinfo"
                         },
                         "ws": {
@@ -656,6 +771,29 @@
                     },
                     "paths": {
                         "/": {
+                            "type": "static",
+                            "directory": "../web",
+                            "options": {
+                                "enable_directory_listing": true
+                            }
+                        },
+                        "autobahn": {
+                            "type": "archive",
+                            "archive": "autobahn-v20.2.1.zip",
+                            "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                            "object_prefix": "autobahn-js-browser-20.2.1",
+                            "default_object": "autobahn.min.js",
+                            "download": true,
+                            "cache": true,
+                            "hashes": [
+                               "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                            ],
+                            "mime_types": {
+                               ".min.js": "text/javascript",
+                               ".jgz": "text/javascript"
+                            }
+                        },
+                        "info": {
                             "type": "nodeinfo"
                         },
                         "ws": {
@@ -725,6 +863,29 @@
                     },
                     "paths": {
                         "/": {
+                            "type": "static",
+                            "directory": "../web",
+                            "options": {
+                                "enable_directory_listing": true
+                            }
+                        },
+                        "autobahn": {
+                            "type": "archive",
+                            "archive": "autobahn-v20.2.1.zip",
+                            "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                            "object_prefix": "autobahn-js-browser-20.2.1",
+                            "default_object": "autobahn.min.js",
+                            "download": true,
+                            "cache": true,
+                            "hashes": [
+                               "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                            ],
+                            "mime_types": {
+                               ".min.js": "text/javascript",
+                               ".jgz": "text/javascript"
+                            }
+                        },
+                        "info": {
                             "type": "nodeinfo"
                         },
                         "ws": {
@@ -794,6 +955,29 @@
                     },
                     "paths": {
                         "/": {
+                            "type": "static",
+                            "directory": "../web",
+                            "options": {
+                                "enable_directory_listing": true
+                            }
+                        },
+                        "autobahn": {
+                            "type": "archive",
+                            "archive": "autobahn-v20.2.1.zip",
+                            "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                            "object_prefix": "autobahn-js-browser-20.2.1",
+                            "default_object": "autobahn.min.js",
+                            "download": true,
+                            "cache": true,
+                            "hashes": [
+                               "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                            ],
+                            "mime_types": {
+                               ".min.js": "text/javascript",
+                               ".jgz": "text/javascript"
+                            }
+                        },
+                        "info": {
                             "type": "nodeinfo"
                         },
                         "ws": {
