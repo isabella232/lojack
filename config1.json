@@ -71,6 +71,21 @@
                     "type": "web",
                     "endpoint": {
                         "type": "tcp",
+                        "port": 80,
+                        "shared": true,
+                        "backlog": 1024
+                    },
+                    "paths": {
+                        "/": {
+                            "type": "redirect",
+                            "url": "https://lojack1.crossbario.com"
+                        }
+                    }
+                },
+                {
+                    "type": "web",
+                    "endpoint": {
+                        "type": "tcp",
                         "port": 443,
                         "shared": true,
                         "backlog": 1024,
