@@ -1,3 +1,4 @@
+import sys
 from jinja2 import Environment, FileSystemLoader
 
 params = {
@@ -8,6 +9,6 @@ params = {
 env = Environment(loader=FileSystemLoader('.'))
 
 with open('node1/.crossbar/config.json', 'wb') as f:
-    page = env.get_template('config.json')
+    page = env.get_template(sys.argv[1])
     contents = page.render(**params)
     f.write(contents.encode('utf8'))
