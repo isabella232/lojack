@@ -2,8 +2,8 @@ version: '3'
 services:
 
     crossbarfx_config1:
-        # https://hub.docker.com/r/crossbario/crossbarfx/tags?page=1&name=20.3.1
-        image: crossbario/crossbarfx:pypy-slim-amd64-20.3.1
+        # https://hub.docker.com/r/crossbario/crossbarfx/tags?page=1&name=20.4.1-dev
+        image: crossbario/crossbarfx:pypy-slim-amd64-20.4.1-dev
         restart: always
         environment:
             - CE_DISABLE=1
@@ -20,8 +20,8 @@ services:
             - --loglevel=info
 
     crossbarfx_config2:
-        # https://hub.docker.com/r/crossbario/crossbarfx/tags?page=1&name=20.3.1
-        image: crossbario/crossbarfx:pypy-slim-amd64-20.3.1
+        # https://hub.docker.com/r/crossbario/crossbarfx/tags?page=1&name=20.4.1-dev
+        image: crossbario/crossbarfx:pypy-slim-amd64-20.4.1-dev
         restart: always
         environment:
             - CE_DISABLE=1
@@ -38,8 +38,8 @@ services:
             - --loglevel=info
 
     crossbarfx_config3:
-        # https://hub.docker.com/r/crossbario/crossbarfx/tags?page=1&name=20.3.1
-        image: crossbario/crossbarfx:pypy-slim-amd64-20.3.1
+        # https://hub.docker.com/r/crossbario/crossbarfx/tags?page=1&name=20.4.1-dev
+        image: crossbario/crossbarfx:pypy-slim-amd64-20.4.1-dev
         restart: always
         environment:
             - CE_DISABLE=1
@@ -56,8 +56,8 @@ services:
             - --loglevel=info
 
     crossbarfx_config4:
-        # https://hub.docker.com/r/crossbario/crossbarfx/tags?page=1&name=20.3.1
-        image: crossbario/crossbarfx:pypy-slim-amd64-20.3.1
+        # https://hub.docker.com/r/crossbario/crossbarfx/tags?page=1&name=20.4.1-dev
+        image: crossbario/crossbarfx:pypy-slim-amd64-20.4.1-dev
         restart: always
         environment:
             - CE_DISABLE=1
