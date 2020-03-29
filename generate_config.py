@@ -1,6 +1,7 @@
 import os
 import sys
 import math
+import json
 from jinja2 import Environment, FileSystemLoader
 
 def chunks(lst, n):
@@ -9,6 +10,35 @@ def chunks(lst, n):
 
 config_name = sys.argv[1]
 config_out_name = sys.argv[2]
+
+# is_production = len(sys.argv) > 3 and sys.argv[3] is not None
+is_production = 'CBPRODUCTION' in os.environ
+
+if is_production:
+    print('configuring for PRODUCTION ..')
+    ENDPOINT = {
+        'type': 'tcp',
+        'port': 443,
+        'shared': True,
+        'backlog': 1024,
+        'tls': {
+            'certificate': 'lojack1.crossbario.com.crt',
+            'key': 'lojack1.crossbario.com.key',
+            'dhparam': 'dhparam.pem',
+            'chain_certificates': [
+                'lojack1.crossbario.com.issuer.crt'
+            ],
+            'ciphers': 'ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256'
+        }
+    }
+else:
+    print('configuring for DEVELOPMENT ..')
+    ENDPOINT = {
+        'type': 'tcp',
+        'port': 8080,
+        'shared': True,
+        'backlog': 1024
+    }
 
 params = {
     'parallel_router': 2,
@@ -26,6 +56,8 @@ for router_no, router_realms in params['realm_names_per_router']:
     for realm_name in router_realms:
         res[realm_name] = router_no
 params['realm_name_to_router'] = list(res.items())
+
+params['endpoint'] = json.dumps(ENDPOINT, ensure_ascii=False)
 
 from pprint import pprint
 pprint(params)
