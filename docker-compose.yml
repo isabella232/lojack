@@ -73,6 +73,24 @@ services:
             - --config=config4.json
             - --loglevel=info
 
+    crossbarfx_config5:
+        # https://hub.docker.com/r/crossbario/crossbarfx/tags?page=1&name=20.4.1-dev
+        image: crossbario/crossbarfx:pypy-slim-amd64-20.4.1-dev
+        restart: always
+        environment:
+            - CE_DISABLE=1
+            - CROSSBARFX_DISABLE_CE=1
+            - CROSSBAR_FABRIC_URL=
+        network_mode: host
+        volumes:
+            - "${PWD}/node1:/node"
+        command:
+            - edge
+            - start
+            - --cbdir=/node/.crossbar
+            - --config=config5.json
+            - --loglevel=info
+
     backend:
         # https://hub.docker.com/r/crossbario/autobahn-python/tags?page=1&name=pypy3-20.2.1
         image: crossbario/autobahn-python:pypy3-20.2.1
