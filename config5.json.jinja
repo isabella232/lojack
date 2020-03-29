@@ -91,42 +91,34 @@
             },
             "transports": [
                 {
-                    "type": "web",
+                    "type": "universal",
                     "endpoint": {
                         "type": "tcp",
                         "port": 8080,
                         "shared": true,
                         "backlog": 1024
                     },
-                    "paths": {
-                        "/": {
-                            "type": "static",
-                            "directory": "../web",
-                            "options": {
-                                "enable_directory_listing": true
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
                             }
                         },
-                        "autobahn": {
-                            "type": "archive",
-                            "archive": "autobahn-v20.2.1.zip",
-                            "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
-                            "object_prefix": "autobahn-js-browser-20.2.1",
-                            "default_object": "autobahn.min.js",
-                            "download": true,
-                            "cache": true,
-                            "hashes": [
-                               "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
-                            ],
-                            "mime_types": {
-                               ".min.js": "text/javascript",
-                               ".jgz": "text/javascript"
-                            }
-                        },
-                        "info": {
-                            "type": "nodeinfo"
-                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
                         "ws": {
                             "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
                             "serializers": [
                                 "cbor", "msgpack", "json"
                             ],
@@ -151,6 +143,36 @@
                                         "max_window_bits": 13,
                                         "memory_level": 5
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
                                 }
                             }
                         }

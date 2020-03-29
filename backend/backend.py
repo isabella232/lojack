@@ -1,12 +1,10 @@
 import os
 import argparse
-from pprint import pformat
 
 import txaio
 txaio.use_twisted()
 
-from txaio import sleep
-
+from autobahn.wamp.types import RegisterOptions, CallDetails
 from autobahn.twisted.wamp import ApplicationSession, ApplicationRunner
 from autobahn.wamp.serializer import CBORSerializer
 
@@ -16,18 +14,19 @@ class Client(ApplicationSession):
     async def onJoin(self, details):
         print('Client joined', details)
 
-        n = 0
-        while True:
-            msg = os.urandom(256)
-            res = await self.call("com.example.echo", msg)
-            assert type(res) == dict and 'msg' in res and type(res['msg']) == bytes
-            assert res['msg'] == msg
-            # FIXME
-            # assert details.session == res['caller']
-            # assert details.authid == res['caller_authid']
-            n += 1
-            print('ok, echo() successfully called {}th time, answered by PID {}'.format(n, res['pid']))
-            await sleep(1)
+        pid = os.getpid()
+
+        async def echo(msg: bytes, details: CallDetails):
+            print('Client.echo(msg=<{} bytes>) from {}'.format(len(msg), details.caller_authid))
+            res = {
+                'pid': pid,
+                'msg': msg,
+                'caller': details.caller,
+                'caller_authid': details.caller_authid,
+            }
+            return res
+
+        await self.register(echo, "com.example.echo", options=RegisterOptions(invoke='random', details=True))
 
 
 if __name__ == '__main__':

@@ -25,3 +25,8 @@ cd ~/scm/crossbario/lojack/
 
 ![shot 1](screenshots/shot1.png "shot 1")
 ![shot 1](screenshots/shot2.png "shot 2")
+
+## VSCode Jinja highlighting
+
+* https://marketplace.visualstudio.com/items?itemName=samuelcolvin.jinjahtml
+* https://github.com/samuelcolvin/jinjahtml-vscode

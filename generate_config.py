@@ -8,6 +8,8 @@ def chunks(lst, n):
         yield lst[i:i + n]
 
 config_name = sys.argv[1]
+config_out_name = sys.argv[2]
+
 params = {
     'parallel_router': 2,
     'parallel_proxy': 4,
@@ -30,7 +32,7 @@ pprint(params)
 
 env = Environment(loader=FileSystemLoader('.'))
 
-with open(os.path.join('node1/.crossbar', config_name), 'wb') as f:
+with open(config_out_name, 'wb') as f:
     page = env.get_template(config_name)
     contents = page.render(**params)
     f.write(contents.encode('utf8'))
