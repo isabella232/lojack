@@ -79,7 +79,7 @@ config4:
 	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config4.json
 
 config5:
-	python generate_config.py config5.json.jinja ./node1/.crossbar/config5.json
+	CBPRODUCTION=1 python generate_config.py config5.json.jinja ./node1/.crossbar/config5.json
 	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config5.json
 
 configs_upload: configs
