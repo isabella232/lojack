@@ -90,6 +90,7 @@
 {% endfor %}
             },
             "transports": [
+{% for endpoint in endpoints %}                
                 {
                     "type": "universal",
                     "endpoint": {{ endpoint|safe }},
@@ -172,7 +173,8 @@
                             }
                         }
                     }
-                }
+                }{% if not loop.last %},{% endif %}
+{% endfor %}                
             ]
         }{% if not loop.last %},{% endif %}
 {% endfor %}

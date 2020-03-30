@@ -14,9 +14,10 @@ config_out_name = sys.argv[2]
 # is_production = len(sys.argv) > 3 and sys.argv[3] is not None
 is_production = 'CBPRODUCTION' in os.environ
 
+ENDPOINTS = []
+
 if is_production:
-    print('configuring for PRODUCTION ..')
-    ENDPOINT = {
+    ENDPOINTS.append(json.dumps({
         'type': 'tcp',
         'port': 443,
         'shared': True,
@@ -30,15 +31,19 @@ if is_production:
             ],
             'ciphers': 'ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256'
         }
-    }
-else:
-    print('configuring for DEVELOPMENT ..')
-    ENDPOINT = {
+    }, ensure_ascii=False))
+    ENDPOINTS.append(json.dumps({
         'type': 'tcp',
-        'port': 8080,
+        'port': 80,
         'shared': True,
         'backlog': 1024
-    }
+    }, ensure_ascii=False))
+else:
+    ENDPOINTS.append(json.dumps({
+        'type': 'tcp',
+        'port': 8080,
+        'shared': True
+    }, ensure_ascii=False))
 
 params = {
     'parallel_router': 2,
@@ -57,7 +62,7 @@ for router_no, router_realms in params['realm_names_per_router']:
         res[realm_name] = router_no
 params['realm_name_to_router'] = list(res.items())
 
-params['endpoint'] = json.dumps(ENDPOINT, ensure_ascii=False)
+params['endpoints'] = ENDPOINTS
 
 from pprint import pprint
 pprint(params)
