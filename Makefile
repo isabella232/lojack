@@ -8,7 +8,7 @@ run_backend:
 	CBRUL=rs://localhost:8080 CBREALM=dvl1 python backend/backend.py
 
 run_client:
-	CBRUL=rs://localhost:8080 CBREALM=dvl1 python backend/client.py
+	python backend/client.py --url=wss://lojack1.crossbario.com/ws --realm=dvl1
 
 
 run_cb_host_config1:

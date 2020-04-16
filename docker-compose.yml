@@ -92,8 +92,8 @@ services:
             - --loglevel=info
 
     backend:
-        # https://hub.docker.com/r/crossbario/autobahn-python/tags?page=1&name=pypy3-20.2.1
-        image: crossbario/autobahn-python:pypy3-20.2.1
+        # https://hub.docker.com/r/crossbario/autobahn-python/tags?page=1&name=pypy3-20.4.2
+        image: crossbario/autobahn-python:pypy3-20.4.2
         restart: always
         environment:
             - CBREALM=dvl1

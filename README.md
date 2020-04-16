@@ -31,10 +31,10 @@ Crossbar:
 
 ```console
 docker pull crossbario/crossbarfx:cpy-slim-amd64
-docker run --rm crossbario/crossbarfx:cpy-slim-amd64 master version
+docker run --rm crossbario/crossbarfx:cpy-slim-amd64 version
 
 docker pull crossbario/crossbarfx:pypy-slim-amd64
-docker run --rm crossbario/crossbarfx:pypy-slim-amd64 master version
+docker run --rm crossbario/crossbarfx:pypy-slim-amd64 version
 
 docker exec -it lojack_crossbarfx_config5_1 ls -la /node/.crossbar/
 
