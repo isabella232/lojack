@@ -4,14 +4,27 @@ CROSSBAR=crossbarfx edge
 LEGO=/usr/local/bin/lego
 
 
+
 run_backend:
 	CBRUL=rs://localhost:8080 CBREALM=dvl1 python backend/backend.py
 
+run_backend_docker:
+	docker-compose up -d backend
+
+
+# client using (secure) websocket
 run_client:
 	python backend/client.py --url=wss://lojack1.crossbario.com/ws --realm=dvl1 --iter=10
 
 run_client_forever:
 	sh -c 'while true; do make run_client; done'
+
+# client using (secure) rawsocket
+run_client_rawsocket:
+	python backend/client.py --url=rss://lojack1.crossbario.com --realm=dvl1 --iter=10
+
+run_client_rawsocket_forever:
+	sh -c 'while true; do make run_client_rawsocket; done'
 
 
 run_cb_host_config1:
