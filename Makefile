@@ -8,7 +8,10 @@ run_backend:
 	CBRUL=rs://localhost:8080 CBREALM=dvl1 python backend/backend.py
 
 run_client:
-	python backend/client.py --url=wss://lojack1.crossbario.com/ws --realm=dvl1
+	python backend/client.py --url=wss://lojack1.crossbario.com/ws --realm=dvl1 --iter=10
+
+run_client_forever:
+	sh -c 'while true; do make run_client; done'
 
 
 run_cb_host_config1:
