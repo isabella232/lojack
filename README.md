@@ -20,6 +20,8 @@ docker ps
 docker logs --tail 40 lojack_crossbarfx_config5_1
 docker logs -f lojack_crossbarfx_config5_1
 
+docker logs lojack_crossbarfx_config5_1 >& cb-logs1.txt
+
 docker top lojack_crossbarfx_config5_1
 
 docker exec -it lojack_crossbarfx_config5_1 bash
