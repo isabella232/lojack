@@ -6,7 +6,7 @@ LEGO=/usr/local/bin/lego
 
 
 run_backend:
-	CBRUL=rs://localhost:8080 CBREALM=dvl1 python backend/backend.py
+	CBURL=rs://localhost:8080 CBREALM=dvl1 python backend/backend.py
 
 run_backend_docker:
 	docker-compose up -d backend
