@@ -1,80 +1,8 @@
 version: '3'
 services:
 
-    crossbarfx_config1:
-        # https://hub.docker.com/r/crossbario/crossbarfx/tags?page=1&name=20.4.2
-        image: crossbario/crossbarfx:pypy-slim-amd64-20.4.2
-        restart: always
-        environment:
-            - CE_DISABLE=1
-            - CROSSBARFX_DISABLE_CE=1
-            - CROSSBAR_FABRIC_URL=
-        network_mode: host
-        volumes:
-            - "${PWD}/node1:/node"
-        command:
-            - edge
-            - start
-            - --cbdir=/node/.crossbar
-            - --config=config1.json
-            - --loglevel=info
-
-    crossbarfx_config2:
-        # https://hub.docker.com/r/crossbario/crossbarfx/tags?page=1&name=20.4.2
-        image: crossbario/crossbarfx:pypy-slim-amd64-20.4.2
-        restart: always
-        environment:
-            - CE_DISABLE=1
-            - CROSSBARFX_DISABLE_CE=1
-            - CROSSBAR_FABRIC_URL=
-        network_mode: host
-        volumes:
-            - "${PWD}/node1:/node"
-        command:
-            - edge
-            - start
-            - --cbdir=/node/.crossbar
-            - --config=config2.json
-            - --loglevel=info
-
-    crossbarfx_config3:
-        # https://hub.docker.com/r/crossbario/crossbarfx/tags?page=1&name=20.4.2
-        image: crossbario/crossbarfx:pypy-slim-amd64-20.4.2
-        restart: always
-        environment:
-            - CE_DISABLE=1
-            - CROSSBARFX_DISABLE_CE=1
-            - CROSSBAR_FABRIC_URL=
-        network_mode: host
-        volumes:
-            - "${PWD}/node1:/node"
-        command:
-            - edge
-            - start
-            - --cbdir=/node/.crossbar
-            - --config=config3.json
-            - --loglevel=info
-
-    crossbarfx_config4:
-        # https://hub.docker.com/r/crossbario/crossbarfx/tags?page=1&name=20.4.2
-        image: crossbario/crossbarfx:pypy-slim-amd64-20.4.2
-        restart: always
-        environment:
-            - CE_DISABLE=1
-            - CROSSBARFX_DISABLE_CE=1
-            - CROSSBAR_FABRIC_URL=
-        network_mode: host
-        volumes:
-            - "${PWD}/node1:/node"
-        command:
-            - edge
-            - start
-            - --cbdir=/node/.crossbar
-            - --config=config4.json
-            - --loglevel=info
-
-    crossbarfx_config5:
-        # https://hub.docker.com/r/crossbario/crossbarfx/tags?page=1&name=20.4.2
+    crossbarfx:
+        container_name: crossbarfx
         image: crossbario/crossbarfx:pypy-slim-amd64-20.4.2
         restart: always
         environment:
@@ -92,7 +20,7 @@ services:
             - --loglevel=info
 
     backend:
-        # https://hub.docker.com/r/crossbario/autobahn-python/tags?page=1&name=pypy3-20.4.2
+        container_name: backend
         image: crossbario/autobahn-python:pypy3-20.4.2
         restart: always
         network_mode: host
@@ -100,4 +28,4 @@ services:
             - "${PWD}/backend:/app:rw"
             - "${PWD}/node1:/node:ro"
         entrypoint: /usr/local/bin/pypy3
-        command: /app/backend.py --url=rs://localhost:80 --realm=dvl1
+        command: /app/backend.py --url=rs://localhost:80 --parallel=4

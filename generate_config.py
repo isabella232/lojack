@@ -12,7 +12,7 @@ config_name = sys.argv[1]
 config_out_name = sys.argv[2]
 
 # is_production = len(sys.argv) > 3 and sys.argv[3] is not None
-is_production = 'CBPRODUCTION' in os.environ
+is_production = 'CBPRODUCTION' in os.environ and int(os.environ['CBPRODUCTION'])
 
 ENDPOINTS = []
 
@@ -41,8 +41,9 @@ if is_production:
 else:
     ENDPOINTS.append(json.dumps({
         'type': 'tcp',
-        'port': 8080,
-        'shared': True
+        'port': 80,
+        'shared': True,
+        'backlog': 1024
     }, ensure_ascii=False))
 
 params = {

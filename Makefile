@@ -14,17 +14,29 @@ run_backend_docker:
 
 # client using (secure) websocket
 run_client:
-	python backend/client.py --url=wss://lojack1.crossbario.com/ws --realm=dvl1 --iter=10
+	python backend/client.py --url=wss://lojack1.crossbario.com/ws --realm=dvl1 --iter=50
+
+run_client_dev:
+	python backend/client.py --url=ws://localhost:80/ws --realm=dvl1 --iter=50
 
 run_client_forever:
 	sh -c 'while true; do make run_client; done'
 
+run_client_dev_forever:
+	sh -c 'while true; do make run_client_dev; done'
+
 # client using (secure) rawsocket
 run_client_rawsocket:
-	python backend/client.py --url=rss://lojack1.crossbario.com --realm=dvl1 --iter=10
+	python backend/client.py --url=rss://lojack1.crossbario.com --realm=dvl1 --iter=50
+
+run_client_dev_rawsocket:
+	python backend/client.py --url=rs://localhost:80 --realm=dvl1 --iter=50
 
 run_client_rawsocket_forever:
 	sh -c 'while true; do make run_client_rawsocket; done'
+
+run_client_rawsocket_dev_forever:
+	sh -c 'while true; do make run_client_dev_rawsocket; done'
 
 
 run_cb_host_config1:
@@ -41,6 +53,10 @@ run_cb_host_config4:
 
 run_cb_host_config5:
 	$(CROSSBAR) start --cbdir=./node1/.crossbar/ --config=config5.json
+
+# sudo setcap 'cap_net_bind_service=+ep' /home/oberstet/cpy381/bin/python3.8
+run_cb_host_config5_dev:
+	$(CROSSBAR) start --cbdir=./node1/.crossbar/ --config=config5-dev.json
 
 
 run_cb_docker_config1:
@@ -95,6 +111,7 @@ config4:
 	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config4.json
 
 config5:
+	CBPRODUCTION=0 python generate_config.py config5.json.jinja ./node1/.crossbar/config5-dev.json
 	CBPRODUCTION=1 python generate_config.py config5.json.jinja ./node1/.crossbar/config5.json
 	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config5.json
 

@@ -1,6 +1,5 @@
 import os
 import argparse
-from pprint import pformat
 
 import txaio
 txaio.use_twisted()
@@ -16,17 +15,20 @@ class Client(ApplicationSession):
     async def onJoin(self, details):
         self.log.info('Client.onJoin(details={details})', details=details)
 
-        n = self.config.extra['iter']
-        cnt = 0
-        while n:
-            msg = os.urandom(256)
-            res = await self.call("com.example.echo", msg)
-            assert type(res) == dict and 'msg' in res and type(res['msg']) == bytes
-            assert res['msg'] == msg
-            n -= 1
-            cnt += 1
-            print('ok, echo() successfully called the {}-th time, answered by callee with PID {}'.format(cnt, res['pid']))
-            await sleep(1)
+        try:
+            n = self.config.extra['iter']
+            cnt = 0
+            while n:
+                msg = os.urandom(256)
+                res = await self.call("com.example.echo", msg)
+                assert type(res) == dict and 'msg' in res and type(res['msg']) == bytes
+                assert res['msg'] == msg
+                n -= 1
+                cnt += 1
+                print('ok, echo() successfully called the {}-th time, answered by callee with PID {}'.format(cnt, res['pid']))
+                await sleep(.1)
+        except:
+            self.log.failure()
         self.leave()
 
     def onLeave(self, details):
