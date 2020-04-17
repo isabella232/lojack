@@ -3,7 +3,7 @@ services:
 
     crossbarfx:
         container_name: crossbarfx
-        image: crossbario/crossbarfx:pypy-slim-amd64-20.4.2
+        image: crossbario/crossbarfx:pypy-slim-amd64-20.4.3-dev1
         restart: always
         environment:
             - CE_DISABLE=1
