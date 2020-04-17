@@ -16,7 +16,7 @@ services:
             - edge
             - start
             - --cbdir=/node/.crossbar
-            - --config=config5-dev.json
+            - --config=config5.json
             - --loglevel=info
 
     backend:
