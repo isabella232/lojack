@@ -5,7 +5,7 @@ import argparse
 import txaio
 txaio.use_twisted()
 
-from txaio import make_logger
+from txaio import make_logger, time_ns
 
 from twisted.internet import reactor
 from twisted.internet.defer import Deferred, gatherResults
@@ -20,14 +20,21 @@ class Client(ApplicationSession):
 
     async def onJoin(self, details):
         pid = os.getpid()
-
         self.log.info('Backend PID {pid} joined:\n{details}', pid=pid, details=details)
-        sys.stdout.flush()
+
+        self._cnt_echo = 0
+        self._last = time_ns()
 
         async def echo(msg: bytes, details: CallDetails):
-            self.log.info('Client.echo(msg=<{mlen} bytes>) on PID {pid} from {client}',
-                          mlen=len(msg), pid=pid, client=details.caller_authid)
-            sys.stdout.flush()
+            self.log.debug('Client.echo(msg=<{mlen} bytes>) on backend PID {pid} from {client}',
+                           mlen=len(msg), pid=pid, client=details.caller_authid)
+            self._cnt_echo += 1
+            if self._cnt_echo % 1000 == 1:
+                now = time_ns()
+                rate = round(self._cnt_echo / (now - self._last) / 10**9, 1)
+                self._last = now
+                self.log.info('Client.echo(): {cnt} calls ({rate} calls/sec) returned successfully by backend PID {pid}',
+                              cnt=self._cnt_echo, pid=pid, rate=rate)
             res = {
                 'pid': pid,
                 'msg': msg,
@@ -39,7 +46,6 @@ class Client(ApplicationSession):
         await self.register(echo, "com.example.echo", options=RegisterOptions(invoke='random', details=True))
 
         self.log.info('Backend ready!')
-        sys.stdout.flush()
 
 
 class Worker(ProcessProtocol):
