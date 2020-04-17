@@ -1,11 +1,15 @@
 import os
+import sys
 import argparse
 
 import txaio
 txaio.use_twisted()
 
-from txaio import sleep
+from txaio import sleep, make_logger
 
+from twisted.internet.protocol import ProcessProtocol
+from twisted.internet.defer import Deferred, gatherResults
+from twisted.internet import reactor
 from autobahn.twisted.wamp import ApplicationSession, ApplicationRunner
 from autobahn.wamp.serializer import CBORSerializer
 
@@ -54,6 +58,34 @@ class Client(ApplicationSession):
                 reactor.stop()
 
 
+class Worker(ProcessProtocol):
+
+    log = make_logger()
+
+    def __init__(self, done):
+        self.done = done
+
+    def connectionMade(self):
+        self.log.info('{klass}.connectionMade()', klass=self.__class__.__name__)
+        ProcessProtocol.connectionMade(self)
+
+    def outReceived(self, data):
+        self.log.debug('{klass}.outReceived(data=<{data_len} bytes>)', klass=self.__class__.__name__, data_len=len(data))
+        print(data.decode())
+
+    def errReceived(self, data):
+        self.log.debug('{klass}.errReceived(data=<{data_len} bytes>)', klass=self.__class__.__name__, data_len=len(data))
+        print(data.decode())
+
+    def processEnded(self, status):
+        self.log.info('{klass}.processEnded(status={status})', klass=self.__class__.__name__, status=status)
+        rc = status.value.exitCode
+        if rc == 0:
+            self.done.callback(self)
+        else:
+            self.done.errback(rc)
+
+
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
@@ -81,6 +113,18 @@ if __name__ == '__main__':
                         default=10,
                         help='Number of iterations before exiting.')
 
+    parser.add_argument('--realms',
+                        dest='realms',
+                        type=str,
+                        default=','.join(['dvl{}'.format(i + 1) for i in range(10)]),
+                        help='The realm to join on the router.')
+
+    parser.add_argument('--parallel',
+                        dest='parallel',
+                        type=int,
+                        default=1,
+                        help='Parallel degree (process-based).')
+
     args = parser.parse_args()
 
     if args.debug:
@@ -92,5 +136,17 @@ if __name__ == '__main__':
         'iter': args.iter,
     }
 
-    runner = ApplicationRunner(url=args.url, realm=args.realm, extra=extra, serializers=[CBORSerializer()])
-    runner.run(Client, auto_reconnect=True)
+    if args.parallel > 1:
+        dl = []
+        for realm in args.realms.split(','):
+            for i in range(args.parallel):
+                cmd = [sys.executable, '-u', os.path.abspath(__file__), '--url', args.url, '--realm', realm]
+                done = Deferred()
+                worker = Worker(done)
+                reactor.spawnProcess(worker, cmd[0], args=cmd, usePTY=True)
+                dl.append(done)
+        all = gatherResults(dl)
+        reactor.run()
+    else:
+        runner = ApplicationRunner(url=args.url, realm=args.realm, extra=extra, serializers=[CBORSerializer()])
+        runner.run(Client, auto_reconnect=True)
