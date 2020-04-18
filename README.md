@@ -1,8 +1,9 @@
 # Crossbar.io FX Test Bed
 
 * [Node 1](https://lojack1.crossbario.com/info)
+* [Node 2](https://lojack2.crossbario.com/info)
 
-## Results
+## Test setup
 
 This test runs load clients on one machine, where the clients connect
 over RawSocket-TCP (no TLS, CBOR serialization) and call a WAMP
@@ -11,13 +12,18 @@ procedure with 256 random bytes as the (single positional) argument.
 The backend procedure called is running on the testee machine, and
 simply returns the 256 random bytes provided as call argument.
 
-Results:
+![AWS setup](screenshots/aws_setup.png "AWS setup")
 
-* more than 150,000 WAMP calls/sec are performed by the load clients
+## Test results
+
+* more than **150,000 WAMP calls/sec** (@ 256 bytes/call) are performed by the load clients
 * traffic runs over a real network (AWS internal) with almost 1Gb/s WAMP client (up+down) traffic
-* CrossbarFX consumes 12 CPU cores and 6GB RAM
-* the test was run constantly at full load for more than an hour with no errors
+* **CrossbarFX consumes 12 CPU cores and 6GB RAM**
+* the test was run constantly at **full load for more than an hour with zero errors**
 * memory consumption remained constant, the testee machine stable
+
+![router load](screenshots/parallel16/router_load.png "router load")
+
 
 ### How to run
 
