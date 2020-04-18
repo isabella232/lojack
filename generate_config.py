@@ -34,11 +34,11 @@ if is_production:
         'shared': True,
         'backlog': 1024,
         'tls': {
-            'certificate': 'lojack1.crossbario.com.crt',
-            'key': 'lojack1.crossbario.com.key',
+            'certificate': '{}.crt'.format(hostname),
+            'key': '{}.key'.format(hostname),
             'dhparam': 'dhparam.pem',
             'chain_certificates': [
-                'lojack1.crossbario.com.issuer.crt'
+                '{}.issuer.crt'.format(hostname)
             ],
             'ciphers': 'ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256'
         }
