@@ -121,11 +121,11 @@ config5xl:
 	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config5xl-dev.json
 	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config5xl.json
 
-config5xl_lojack2:
-	CBPRODUCTION=0 python generate_config.py  lojack2.crossbario.com  config5.json.jinja ./node2/.crossbar/config5xl-dev.json 8 16
-	CBPRODUCTION=1 python generate_config.py  lojack2.crossbario.com  config5.json.jinja ./node2/.crossbar/config5xl.json 8 16
-	$(CROSSBAR) check --cbdir=./node2/.crossbar/ --config=config5xl-dev.json
-	$(CROSSBAR) check --cbdir=./node2/.crossbar/ --config=config5xl.json
+config5xxl_lojack2:
+	CBPRODUCTION=0 python generate_config.py  lojack2.crossbario.com  config5.json.jinja ./node2/.crossbar/config5xxl-dev.json 8 16
+	CBPRODUCTION=1 python generate_config.py  lojack2.crossbario.com  config5.json.jinja ./node2/.crossbar/config5xxl.json 8 16
+	$(CROSSBAR) check --cbdir=./node2/.crossbar/ --config=config5xxl-dev.json
+	$(CROSSBAR) check --cbdir=./node2/.crossbar/ --config=config5xxl.json
 
 
 configs_upload: configs

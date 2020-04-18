@@ -1,8 +1,8 @@
 version: '3'
 services:
 
-    crossbarfx:
-        container_name: crossbarfx
+    node1:
+        container_name: node1
         image: crossbario/crossbarfx:pypy-slim-amd64
         # image: crossbario/crossbarfx:pypy-slim-amd64-20.4.3-dev1
         restart: always
@@ -19,6 +19,25 @@ services:
             - --cbdir=/node/.crossbar
             - --config=config5xl.json
             # - --config=config5xl-dev.json
+            - --loglevel=info
+
+    node2:
+        container_name: node2
+        image: crossbario/crossbarfx:pypy-slim-amd64
+        # image: crossbario/crossbarfx:pypy-slim-amd64-20.4.3-dev1
+        restart: always
+        environment:
+            - CE_DISABLE=1
+            - CROSSBARFX_DISABLE_CE=1
+            - CROSSBAR_FABRIC_URL=
+        network_mode: host
+        volumes:
+            - "${PWD}/node2:/node"
+        command:
+            - edge
+            - start
+            - --cbdir=/node/.crossbar
+            - --config=config5xxl.json
             - --loglevel=info
 
     backend:
