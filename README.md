@@ -2,6 +2,53 @@
 
 * [Node 1](https://lojack1.crossbario.com/info)
 
+## Results
+
+This test runs load clients on one machine, where the clients connect
+over RawSocket-TCP (no TLS, CBOR serialization) and call a WAMP
+procedure with 256 random bytes as the (single positional) argument.
+
+The backend procedure called is running on the testee machine, and
+simply returns the 256 random bytes provided as call argument.
+
+Results:
+
+* more than 150,000 WAMP calls/sec are performed by the load clients
+* traffic runs over a real network (AWS internal) with almost 1Gb/s WAMP client (up+down) traffic
+* CrossbarFX consumes 12 CPU cores and 6GB RAM
+* the test was run constantly at full load for more than an hour with no errors
+* memory consumption remained constant, the testee machine stable
+
+### How to run
+
+On **lojack2** (c5.4xlarge):
+
+```
+docker-compose up node2
+```
+
+and
+
+```
+docker-compose up backend
+```
+
+On **lojack1** (m5a.8xlarge):
+
+```
+(pypy3_1) ubuntu@lojack1:~/scm/crossbario/lojack$ pypy3 backend/client.py --url=rs://lojack2.crossbario.com:80 --parallel=16
+```
+
+![client](screenshots/parallel16/client.png "client")
+
+
+![client load](screenshots/parallel16/client_load.png "client load")
+
+
+![router load](screenshots/parallel16/router_load.png "router load")
+
+
+
 ## tldr;
 
 Login:

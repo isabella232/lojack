@@ -4,6 +4,8 @@ CROSSBAR=crossbarfx edge
 LEGO=/usr/local/bin/lego
 
 
+install:
+	pip install autobahn[asyncio,twisted,encryption,compress,serialization,scram,xbr]
 
 run_backend:
 	CBRUL=rs://localhost:8080 CBREALM=dvl1 python backend/backend.py
