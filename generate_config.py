@@ -11,6 +11,16 @@ def chunks(lst, n):
 config_name = sys.argv[1]
 config_out_name = sys.argv[2]
 
+if len(sys.argv) > 3:
+    config_routers = int(sys.argv[3])
+else:
+    config_routers = 2
+
+if len(sys.argv) > 4:
+    config_proxies = int(sys.argv[4])
+else:
+    config_proxies = 4
+
 # is_production = len(sys.argv) > 3 and sys.argv[3] is not None
 is_production = 'CBPRODUCTION' in os.environ and int(os.environ['CBPRODUCTION'])
 
@@ -47,9 +57,9 @@ else:
     }, ensure_ascii=False))
 
 params = {
-    'parallel_router': 2,
-    'parallel_proxy': 4,
-    'realm_names': ['dvl{}'.format(i + 1) for i in range(10)]
+    'parallel_router': config_routers,
+    'parallel_proxy': config_proxies,
+    'realm_names': ['dvl{}'.format(i + 1) for i in range(8)]
 }
 assert len(params['realm_names']) >= params['parallel_router']
 

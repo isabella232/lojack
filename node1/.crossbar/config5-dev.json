@@ -116,32 +116,6 @@
                             ]
                         }
                     ]
-                },
-
-                {
-                    "name": "dvl5",
-                    "roles": [
-                        {
-                            "name": "anonymous",
-                            "permissions": [
-                                {
-                                    "uri": "",
-                                    "match": "prefix",
-                                    "allow": {
-                                        "call": true,
-                                        "register": true,
-                                        "publish": true,
-                                        "subscribe": true
-                                    },
-                                    "disclose": {
-                                        "caller": true,
-                                        "publisher": true
-                                    },
-                                    "cache": true
-                                }
-                            ]
-                        }
-                    ]
                 }
 
             ],
@@ -169,6 +143,32 @@
             "id": "rtr_1",
             "type": "router",
             "realms": [
+
+                {
+                    "name": "dvl5",
+                    "roles": [
+                        {
+                            "name": "anonymous",
+                            "permissions": [
+                                {
+                                    "uri": "",
+                                    "match": "prefix",
+                                    "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                    },
+                                    "disclose": {
+                                        "caller": true,
+                                        "publisher": true
+                                    },
+                                    "cache": true
+                                }
+                            ]
+                        }
+                    ]
+                },
 
                 {
                     "name": "dvl6",
@@ -224,58 +224,6 @@
 
                 {
                     "name": "dvl8",
-                    "roles": [
-                        {
-                            "name": "anonymous",
-                            "permissions": [
-                                {
-                                    "uri": "",
-                                    "match": "prefix",
-                                    "allow": {
-                                        "call": true,
-                                        "register": true,
-                                        "publish": true,
-                                        "subscribe": true
-                                    },
-                                    "disclose": {
-                                        "caller": true,
-                                        "publisher": true
-                                    },
-                                    "cache": true
-                                }
-                            ]
-                        }
-                    ]
-                },
-
-                {
-                    "name": "dvl9",
-                    "roles": [
-                        {
-                            "name": "anonymous",
-                            "permissions": [
-                                {
-                                    "uri": "",
-                                    "match": "prefix",
-                                    "allow": {
-                                        "call": true,
-                                        "register": true,
-                                        "publish": true,
-                                        "subscribe": true
-                                    },
-                                    "disclose": {
-                                        "caller": true,
-                                        "publisher": true
-                                    },
-                                    "cache": true
-                                }
-                            ]
-                        }
-                    ]
-                },
-
-                {
-                    "name": "dvl10",
                     "roles": [
                         {
                             "name": "anonymous",
@@ -373,7 +321,7 @@
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_0"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl6": {
@@ -385,14 +333,6 @@
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_1"
-                },
-
-                "dvl9": {
-                    "anonymous": "cnc_1"
-                },
-
-                "dvl10": {
                     "anonymous": "cnc_1"
                 }
 
@@ -537,7 +477,7 @@
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_0"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl6": {
@@ -549,14 +489,6 @@
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_1"
-                },
-
-                "dvl9": {
-                    "anonymous": "cnc_1"
-                },
-
-                "dvl10": {
                     "anonymous": "cnc_1"
                 }
 
@@ -701,7 +633,7 @@
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_0"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl6": {
@@ -713,14 +645,6 @@
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_1"
-                },
-
-                "dvl9": {
-                    "anonymous": "cnc_1"
-                },
-
-                "dvl10": {
                     "anonymous": "cnc_1"
                 }
 
@@ -865,7 +789,7 @@
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_0"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl6": {
@@ -877,14 +801,6 @@
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_1"
-                },
-
-                "dvl9": {
-                    "anonymous": "cnc_1"
-                },
-
-                "dvl10": {
                     "anonymous": "cnc_1"
                 }
 

@@ -111,8 +111,13 @@ config4:
 	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config4.json
 
 config5:
-	CBPRODUCTION=0 python generate_config.py config5.json.jinja ./node1/.crossbar/config5-dev.json
-	CBPRODUCTION=1 python generate_config.py config5.json.jinja ./node1/.crossbar/config5.json
+	CBPRODUCTION=0 python generate_config.py config5.json.jinja ./node1/.crossbar/config5-dev.json 2 4
+	CBPRODUCTION=1 python generate_config.py config5.json.jinja ./node1/.crossbar/config5.json 2 4
+	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config5.json
+
+config5xl:
+	CBPRODUCTION=0 python generate_config.py config5.json.jinja ./node1/.crossbar/config5xl-dev.json 4 8
+	CBPRODUCTION=1 python generate_config.py config5.json.jinja ./node1/.crossbar/config5xl.json 4 8
 	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config5.json
 
 configs_upload: configs

@@ -1,0 +1,2438 @@
+{
+    "$schema": "https://raw.githubusercontent.com/crossbario/crossbar/master/crossbar.json",
+    "version": 2,
+    "controller": {
+        "id": "lojack1",
+        "enable_docker": false,
+        "fabric": {
+        }
+    },
+    "workers": [
+
+        {
+            "id": "rtr_0",
+            "type": "router",
+            "realms": [
+
+                {
+                    "name": "dvl1",
+                    "roles": [
+                        {
+                            "name": "anonymous",
+                            "permissions": [
+                                {
+                                    "uri": "",
+                                    "match": "prefix",
+                                    "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                    },
+                                    "disclose": {
+                                        "caller": true,
+                                        "publisher": true
+                                    },
+                                    "cache": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+                {
+                    "name": "dvl2",
+                    "roles": [
+                        {
+                            "name": "anonymous",
+                            "permissions": [
+                                {
+                                    "uri": "",
+                                    "match": "prefix",
+                                    "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                    },
+                                    "disclose": {
+                                        "caller": true,
+                                        "publisher": true
+                                    },
+                                    "cache": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+
+            ],
+            "transports": [
+                {
+                    "type": "rawsocket",
+                    "endpoint": {
+                        "type": "unix",
+                        "path": "rtr_0.sock"
+                    },
+                    "options": {
+                        "max_message_size": 1048576
+                    },
+                    "serializers": ["cbor"],
+                    "auth": {
+                        "anonymous-proxy": {
+                            "type": "static"
+                        }
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "rtr_1",
+            "type": "router",
+            "realms": [
+
+                {
+                    "name": "dvl3",
+                    "roles": [
+                        {
+                            "name": "anonymous",
+                            "permissions": [
+                                {
+                                    "uri": "",
+                                    "match": "prefix",
+                                    "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                    },
+                                    "disclose": {
+                                        "caller": true,
+                                        "publisher": true
+                                    },
+                                    "cache": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+                {
+                    "name": "dvl4",
+                    "roles": [
+                        {
+                            "name": "anonymous",
+                            "permissions": [
+                                {
+                                    "uri": "",
+                                    "match": "prefix",
+                                    "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                    },
+                                    "disclose": {
+                                        "caller": true,
+                                        "publisher": true
+                                    },
+                                    "cache": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+
+            ],
+            "transports": [
+                {
+                    "type": "rawsocket",
+                    "endpoint": {
+                        "type": "unix",
+                        "path": "rtr_1.sock"
+                    },
+                    "options": {
+                        "max_message_size": 1048576
+                    },
+                    "serializers": ["cbor"],
+                    "auth": {
+                        "anonymous-proxy": {
+                            "type": "static"
+                        }
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "rtr_2",
+            "type": "router",
+            "realms": [
+
+                {
+                    "name": "dvl5",
+                    "roles": [
+                        {
+                            "name": "anonymous",
+                            "permissions": [
+                                {
+                                    "uri": "",
+                                    "match": "prefix",
+                                    "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                    },
+                                    "disclose": {
+                                        "caller": true,
+                                        "publisher": true
+                                    },
+                                    "cache": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+                {
+                    "name": "dvl6",
+                    "roles": [
+                        {
+                            "name": "anonymous",
+                            "permissions": [
+                                {
+                                    "uri": "",
+                                    "match": "prefix",
+                                    "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                    },
+                                    "disclose": {
+                                        "caller": true,
+                                        "publisher": true
+                                    },
+                                    "cache": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+
+            ],
+            "transports": [
+                {
+                    "type": "rawsocket",
+                    "endpoint": {
+                        "type": "unix",
+                        "path": "rtr_2.sock"
+                    },
+                    "options": {
+                        "max_message_size": 1048576
+                    },
+                    "serializers": ["cbor"],
+                    "auth": {
+                        "anonymous-proxy": {
+                            "type": "static"
+                        }
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "rtr_3",
+            "type": "router",
+            "realms": [
+
+                {
+                    "name": "dvl7",
+                    "roles": [
+                        {
+                            "name": "anonymous",
+                            "permissions": [
+                                {
+                                    "uri": "",
+                                    "match": "prefix",
+                                    "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                    },
+                                    "disclose": {
+                                        "caller": true,
+                                        "publisher": true
+                                    },
+                                    "cache": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+                {
+                    "name": "dvl8",
+                    "roles": [
+                        {
+                            "name": "anonymous",
+                            "permissions": [
+                                {
+                                    "uri": "",
+                                    "match": "prefix",
+                                    "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                    },
+                                    "disclose": {
+                                        "caller": true,
+                                        "publisher": true
+                                    },
+                                    "cache": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+
+            ],
+            "transports": [
+                {
+                    "type": "rawsocket",
+                    "endpoint": {
+                        "type": "unix",
+                        "path": "rtr_3.sock"
+                    },
+                    "options": {
+                        "max_message_size": 1048576
+                    },
+                    "serializers": ["cbor"],
+                    "auth": {
+                        "anonymous-proxy": {
+                            "type": "static"
+                        }
+                    }
+                }
+            ]
+        },
+
+
+        {
+            "id": "pxy_0",
+            "type": "proxy",
+            "options": {
+            },
+            "connections": {
+
+                "cnc_0": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_0.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_1": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_1.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_2": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_2.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_3": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_3.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                }
+                
+            },
+            "routes": {
+
+                "dvl1": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl2": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl3": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl4": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl5": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl6": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl7": {
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl8": {
+                    "anonymous": "cnc_3"
+                }
+
+            },
+            "transports": [
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 443, "shared": true, "backlog": 1024, "tls": {"certificate": "lojack1.crossbario.com.crt", "key": "lojack1.crossbario.com.key", "dhparam": "dhparam.pem", "chain_certificates": ["lojack1.crossbario.com.issuer.crt"], "ciphers": "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256"}},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                },
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 80, "shared": true, "backlog": 1024},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            ]
+        },
+
+        {
+            "id": "pxy_1",
+            "type": "proxy",
+            "options": {
+            },
+            "connections": {
+
+                "cnc_0": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_0.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_1": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_1.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_2": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_2.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_3": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_3.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                }
+                
+            },
+            "routes": {
+
+                "dvl1": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl2": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl3": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl4": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl5": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl6": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl7": {
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl8": {
+                    "anonymous": "cnc_3"
+                }
+
+            },
+            "transports": [
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 443, "shared": true, "backlog": 1024, "tls": {"certificate": "lojack1.crossbario.com.crt", "key": "lojack1.crossbario.com.key", "dhparam": "dhparam.pem", "chain_certificates": ["lojack1.crossbario.com.issuer.crt"], "ciphers": "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256"}},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                },
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 80, "shared": true, "backlog": 1024},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            ]
+        },
+
+        {
+            "id": "pxy_2",
+            "type": "proxy",
+            "options": {
+            },
+            "connections": {
+
+                "cnc_0": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_0.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_1": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_1.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_2": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_2.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_3": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_3.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                }
+                
+            },
+            "routes": {
+
+                "dvl1": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl2": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl3": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl4": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl5": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl6": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl7": {
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl8": {
+                    "anonymous": "cnc_3"
+                }
+
+            },
+            "transports": [
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 443, "shared": true, "backlog": 1024, "tls": {"certificate": "lojack1.crossbario.com.crt", "key": "lojack1.crossbario.com.key", "dhparam": "dhparam.pem", "chain_certificates": ["lojack1.crossbario.com.issuer.crt"], "ciphers": "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256"}},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                },
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 80, "shared": true, "backlog": 1024},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            ]
+        },
+
+        {
+            "id": "pxy_3",
+            "type": "proxy",
+            "options": {
+            },
+            "connections": {
+
+                "cnc_0": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_0.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_1": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_1.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_2": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_2.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_3": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_3.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                }
+                
+            },
+            "routes": {
+
+                "dvl1": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl2": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl3": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl4": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl5": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl6": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl7": {
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl8": {
+                    "anonymous": "cnc_3"
+                }
+
+            },
+            "transports": [
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 443, "shared": true, "backlog": 1024, "tls": {"certificate": "lojack1.crossbario.com.crt", "key": "lojack1.crossbario.com.key", "dhparam": "dhparam.pem", "chain_certificates": ["lojack1.crossbario.com.issuer.crt"], "ciphers": "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256"}},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                },
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 80, "shared": true, "backlog": 1024},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            ]
+        },
+
+        {
+            "id": "pxy_4",
+            "type": "proxy",
+            "options": {
+            },
+            "connections": {
+
+                "cnc_0": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_0.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_1": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_1.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_2": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_2.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_3": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_3.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                }
+                
+            },
+            "routes": {
+
+                "dvl1": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl2": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl3": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl4": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl5": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl6": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl7": {
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl8": {
+                    "anonymous": "cnc_3"
+                }
+
+            },
+            "transports": [
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 443, "shared": true, "backlog": 1024, "tls": {"certificate": "lojack1.crossbario.com.crt", "key": "lojack1.crossbario.com.key", "dhparam": "dhparam.pem", "chain_certificates": ["lojack1.crossbario.com.issuer.crt"], "ciphers": "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256"}},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                },
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 80, "shared": true, "backlog": 1024},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            ]
+        },
+
+        {
+            "id": "pxy_5",
+            "type": "proxy",
+            "options": {
+            },
+            "connections": {
+
+                "cnc_0": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_0.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_1": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_1.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_2": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_2.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_3": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_3.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                }
+                
+            },
+            "routes": {
+
+                "dvl1": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl2": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl3": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl4": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl5": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl6": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl7": {
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl8": {
+                    "anonymous": "cnc_3"
+                }
+
+            },
+            "transports": [
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 443, "shared": true, "backlog": 1024, "tls": {"certificate": "lojack1.crossbario.com.crt", "key": "lojack1.crossbario.com.key", "dhparam": "dhparam.pem", "chain_certificates": ["lojack1.crossbario.com.issuer.crt"], "ciphers": "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256"}},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                },
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 80, "shared": true, "backlog": 1024},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            ]
+        },
+
+        {
+            "id": "pxy_6",
+            "type": "proxy",
+            "options": {
+            },
+            "connections": {
+
+                "cnc_0": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_0.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_1": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_1.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_2": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_2.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_3": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_3.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                }
+                
+            },
+            "routes": {
+
+                "dvl1": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl2": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl3": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl4": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl5": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl6": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl7": {
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl8": {
+                    "anonymous": "cnc_3"
+                }
+
+            },
+            "transports": [
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 443, "shared": true, "backlog": 1024, "tls": {"certificate": "lojack1.crossbario.com.crt", "key": "lojack1.crossbario.com.key", "dhparam": "dhparam.pem", "chain_certificates": ["lojack1.crossbario.com.issuer.crt"], "ciphers": "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256"}},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                },
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 80, "shared": true, "backlog": 1024},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            ]
+        },
+
+        {
+            "id": "pxy_7",
+            "type": "proxy",
+            "options": {
+            },
+            "connections": {
+
+                "cnc_0": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_0.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_1": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_1.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_2": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_2.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                },
+
+                "cnc_3": {
+                    "transport": {
+                        "type": "rawsocket",
+                        "endpoint": {
+                            "type": "unix",
+                            "path": "rtr_3.sock"
+                        },
+                        "url": "ws://localhost",
+                        "serializer": "cbor"
+                    }
+                }
+                
+            },
+            "routes": {
+
+                "dvl1": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl2": {
+                    "anonymous": "cnc_0"
+                },
+
+                "dvl3": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl4": {
+                    "anonymous": "cnc_1"
+                },
+
+                "dvl5": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl6": {
+                    "anonymous": "cnc_2"
+                },
+
+                "dvl7": {
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl8": {
+                    "anonymous": "cnc_3"
+                }
+
+            },
+            "transports": [
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 443, "shared": true, "backlog": 1024, "tls": {"certificate": "lojack1.crossbario.com.crt", "key": "lojack1.crossbario.com.key", "dhparam": "dhparam.pem", "chain_certificates": ["lojack1.crossbario.com.issuer.crt"], "ciphers": "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256"}},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                },
+                
+                {
+                    "type": "universal",
+                    "endpoint": {"type": "tcp", "port": 80, "shared": true, "backlog": 1024},
+                    "rawsocket": {
+                        "auth": {
+                            "anonymous": {
+                                "type": "static",
+                                "role": "anonymous"
+                            }
+                        },
+                        "serializers": ["cbor", "msgpack", "json"],
+                        "options": {
+                            "max_message_size": 1048576
+                        }
+                    },
+                    "websocket": {
+                        "ws": {
+                            "type": "websocket",
+                            "auth": {
+                                "anonymous": {
+                                    "type": "static",
+                                    "role": "anonymous"
+                                }
+                            },
+                            "serializers": [
+                                "cbor", "msgpack", "json"
+                            ],
+                            "options": {
+                                "allowed_origins": ["*"],
+                                "allow_null_origin": true,
+                                "enable_webstatus": true,
+                                "max_frame_size": 1048576,
+                                "max_message_size": 1048576,
+                                "auto_fragment_size": 65536,
+                                "fail_by_drop": true,
+                                "open_handshake_timeout": 2500,
+                                "close_handshake_timeout": 1000,
+                                "auto_ping_interval": 10000,
+                                "auto_ping_timeout": 5000,
+                                "auto_ping_size": 4,
+                                "compression": {
+                                    "deflate": {
+                                        "request_no_context_takeover": false,
+                                        "request_max_window_bits": 13,
+                                        "no_context_takeover": false,
+                                        "max_window_bits": 13,
+                                        "memory_level": 5
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "web": {
+                        "paths": {
+                            "/": {
+                                "type": "static",
+                                "directory": "../web",
+                                "options": {
+                                    "enable_directory_listing": true
+                                }
+                            },
+                            "info": {
+                                "type": "nodeinfo"
+                            },
+                            "autobahn": {
+                                "type": "archive",
+                                "archive": "autobahn-v20.2.1.zip",
+                                "origin": "https://github.com/crossbario/autobahn-js-browser/archive/v20.2.1.zip",
+                                "object_prefix": "autobahn-js-browser-20.2.1",
+                                "default_object": "autobahn.min.js",
+                                "download": true,
+                                "cache": true,
+                                "hashes": [
+                                    "b69cd17ac043cceceea8ed589a09a2555b5c39e32c2fea18ecc26dc5baf67de8"
+                                ],
+                                "mime_types": {
+                                ".min.js": "text/javascript",
+                                ".jgz": "text/javascript"
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            ]
+        }
+
+    ]
+}

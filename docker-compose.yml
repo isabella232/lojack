@@ -3,7 +3,8 @@ services:
 
     crossbarfx:
         container_name: crossbarfx
-        image: crossbario/crossbarfx:pypy-slim-amd64-20.4.3-dev1
+        image: crossbario/crossbarfx:pypy-slim-amd64
+        # image: crossbario/crossbarfx:pypy-slim-amd64-20.4.3-dev1
         restart: always
         environment:
             - CE_DISABLE=1
@@ -16,7 +17,8 @@ services:
             - edge
             - start
             - --cbdir=/node/.crossbar
-            - --config=config5.json
+            - --config=config5xl.json
+            # - --config=config5xl-dev.json
             - --loglevel=info
 
     backend:
