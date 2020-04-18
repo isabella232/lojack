@@ -1,7 +1,7 @@
 # Crossbar.io FX Test Bed
 
-* [Node 1](https://lojack1.crossbario.com/info)
-* [Node 2](https://lojack2.crossbario.com/info)
+* [Node 1](https://lojack1.crossbario.com/info) - **m5a.8xlarge** (32 cores, AMD EPYC 7571 @ 2.5GHz)
+* [Node 2](https://lojack2.crossbario.com/info) - **c5.4xlarge** (16 cores, Intel(R) Xeon(R) Platinum 8124M CPU @ 3.00GHz)
 
 ## Test setup
 
@@ -11,6 +11,9 @@ procedure with 256 random bytes as the (single positional) argument.
 
 The backend procedure called is running on the testee machine, and
 simply returns the 256 random bytes provided as call argument.
+
+* CrossbarFX configuration: 8 router worker, 16 proxy worker (ratio proxy-to-router workers is 2:1)
+* 128 client connections were used (#router X #proxies => 8 X 16 = 128)
 
 ![AWS setup](screenshots/aws_setup.png "AWS setup")
 
@@ -23,6 +26,13 @@ simply returns the 256 random bytes provided as call argument.
 * memory consumption remained constant, the testee machine stable
 
 ![router load](screenshots/parallel16/router_load.png "router load")
+
+### Notes
+
+At this performance (150,000 WAMP calls/sec @ 256 bytes/call), the resulting egress traffic, from CrossbarFX back to clients over the Internet, for which one needs to pay AWS:
+
+* 509Mb/s egress * 24/7 = 158 TB / month
+* at AWS prices, this is ~8,000 USD _monthly_ AWS data transfer bill!
 
 
 ### How to run
