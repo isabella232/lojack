@@ -95,30 +95,38 @@ download_exe:
 configs: config1 config2 config3 config4 config5
 
 config1:
-	python generate_config.py config1.json.jinja ./node1/.crossbar/config1.json
+	python generate_config.py  lojack1.crossbario.com  config1.json.jinja ./node1/.crossbar/config1.json
 	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config1.json
 
 config2:
-	python generate_config.py config2.json.jinja ./node1/.crossbar/config2.json
+	python generate_config.py  lojack1.crossbario.com  config2.json.jinja ./node1/.crossbar/config2.json
 	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config2.json
 
 config3:
-	python generate_config.py config3.json.jinja ./node1/.crossbar/config3.json
+	python generate_config.py  lojack1.crossbario.com  config3.json.jinja ./node1/.crossbar/config3.json
 	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config3.json
 
 config4:
-	python generate_config.py config4.json.jinja ./node1/.crossbar/config4.json
+	python generate_config.py  lojack1.crossbario.com  config4.json.jinja ./node1/.crossbar/config4.json
 	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config4.json
 
 config5:
-	CBPRODUCTION=0 python generate_config.py config5.json.jinja ./node1/.crossbar/config5-dev.json 2 4
-	CBPRODUCTION=1 python generate_config.py config5.json.jinja ./node1/.crossbar/config5.json 2 4
+	CBPRODUCTION=0 python generate_config.py  lojack1.crossbario.com  config5.json.jinja ./node1/.crossbar/config5-dev.json 2 4
+	CBPRODUCTION=1 python generate_config.py  lojack1.crossbario.com  config5.json.jinja ./node1/.crossbar/config5.json 2 4
 	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config5.json
 
 config5xl:
-	CBPRODUCTION=0 python generate_config.py config5.json.jinja ./node1/.crossbar/config5xl-dev.json 4 8
-	CBPRODUCTION=1 python generate_config.py config5.json.jinja ./node1/.crossbar/config5xl.json 4 8
-	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config5.json
+	CBPRODUCTION=0 python generate_config.py  lojack1.crossbario.com  config5.json.jinja ./node1/.crossbar/config5xl-dev.json 4 8
+	CBPRODUCTION=1 python generate_config.py  lojack1.crossbario.com  config5.json.jinja ./node1/.crossbar/config5xl.json 4 8
+	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config5xl-dev.json
+	$(CROSSBAR) check --cbdir=./node1/.crossbar/ --config=config5xl.json
+
+config5xl_lojack2:
+	CBPRODUCTION=0 python generate_config.py  lojack2.crossbario.com  config5.json.jinja ./node2/.crossbar/config5xl-dev.json 8 16
+	CBPRODUCTION=1 python generate_config.py  lojack2.crossbario.com  config5.json.jinja ./node2/.crossbar/config5xl.json 8 16
+	$(CROSSBAR) check --cbdir=./node2/.crossbar/ --config=config5xl-dev.json
+	$(CROSSBAR) check --cbdir=./node2/.crossbar/ --config=config5xl.json
+
 
 configs_upload: configs
 	scp ./node1/.crossbar/config*.json \
@@ -149,3 +157,28 @@ dhparam_generate:
 dhparam_upload:
 	scp ./node1/.crossbar/dhparam.pem \
 		ubuntu@lojack1.crossbario.com:~/scm/crossbario/lojack/node1/.crossbar/
+
+cert_update2:
+	AWS_REGION=us-east-1 $(LEGO) \
+		--path ~/.lego \
+		--accept-tos \
+		--key-type "rsa4096" \
+		--email "ops@crossbario.com" \
+		--domains "lojack2.crossbario.com" \
+		--dns "route53" \
+		run
+
+cert_upload2:
+	scp ${HOME}/.lego/certificates/lojack2.crossbario.com.issuer.crt \
+		ubuntu@lojack2.crossbario.com:~/scm/crossbario/lojack/node2/.crossbar/
+	scp ${HOME}/.lego/certificates/lojack2.crossbario.com.key \
+		ubuntu@lojack2.crossbario.com:~/scm/crossbario/lojack/node2/.crossbar/
+	scp ${HOME}/.lego/certificates/lojack2.crossbario.com.crt \
+		ubuntu@lojack2.crossbario.com:~/scm/crossbario/lojack/node2/.crossbar/
+
+dhparam_generate2:
+	openssl dhparam -2 4096 -out ./node2/.crossbar/dhparam.pem
+
+dhparam_upload2:
+	scp ./node2/.crossbar/dhparam.pem \
+		ubuntu@lojack2.crossbario.com:~/scm/crossbario/lojack/node2/.crossbar/

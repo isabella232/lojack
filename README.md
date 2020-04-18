@@ -12,6 +12,12 @@ source ~/cpy381_1/bin/activate
 cd ~/scm/crossbario/lojack/
 ```
 
+```console
+ssh ubuntu@lojack2.crossbario.com
+source ~/cpy381_1/bin/activate
+cd ~/scm/crossbario/lojack/
+```
+
 Docker:
 
 ```console

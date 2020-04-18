@@ -8,16 +8,17 @@ def chunks(lst, n):
     for i in range(0, len(lst), n):
         yield lst[i:i + n]
 
-config_name = sys.argv[1]
-config_out_name = sys.argv[2]
+hostname = sys.argv[1]
+config_name = sys.argv[2]
+config_out_name = sys.argv[3]
 
-if len(sys.argv) > 3:
-    config_routers = int(sys.argv[3])
+if len(sys.argv) > 4:
+    config_routers = int(sys.argv[4])
 else:
     config_routers = 2
 
-if len(sys.argv) > 4:
-    config_proxies = int(sys.argv[4])
+if len(sys.argv) > 5:
+    config_proxies = int(sys.argv[5])
 else:
     config_proxies = 4
 
