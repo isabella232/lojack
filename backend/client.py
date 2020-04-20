@@ -27,7 +27,7 @@ class PipelinedClient(ApplicationSession):
 
         def issue_batch():
             dl = []
-            for i in range(200):
+            for i in range(1000):
                 msg = os.urandom(256)
                 d = self.call("com.example.echo", msg)
 
@@ -179,7 +179,7 @@ if __name__ == '__main__':
     parser.add_argument('--realms',
                         dest='realms',
                         type=str,
-                        default=','.join(['dvl{}'.format(i + 1) for i in range(8)]),
+                        default=','.join(['dvl{}'.format(i + 1) for i in range(10)]),
                         help='The realm to join on the router.')
 
     parser.add_argument('--parallel',
