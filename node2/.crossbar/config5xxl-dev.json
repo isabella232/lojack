@@ -38,6 +38,32 @@
                             ]
                         }
                     ]
+                },
+
+                {
+                    "name": "dvl2",
+                    "roles": [
+                        {
+                            "name": "anonymous",
+                            "permissions": [
+                                {
+                                    "uri": "",
+                                    "match": "prefix",
+                                    "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                    },
+                                    "disclose": {
+                                        "caller": true,
+                                        "publisher": true
+                                    },
+                                    "cache": true
+                                }
+                            ]
+                        }
+                    ]
                 }
 
             ],
@@ -67,7 +93,33 @@
             "realms": [
 
                 {
-                    "name": "dvl2",
+                    "name": "dvl3",
+                    "roles": [
+                        {
+                            "name": "anonymous",
+                            "permissions": [
+                                {
+                                    "uri": "",
+                                    "match": "prefix",
+                                    "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                    },
+                                    "disclose": {
+                                        "caller": true,
+                                        "publisher": true
+                                    },
+                                    "cache": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+                {
+                    "name": "dvl4",
                     "roles": [
                         {
                             "name": "anonymous",
@@ -119,7 +171,33 @@
             "realms": [
 
                 {
-                    "name": "dvl3",
+                    "name": "dvl5",
+                    "roles": [
+                        {
+                            "name": "anonymous",
+                            "permissions": [
+                                {
+                                    "uri": "",
+                                    "match": "prefix",
+                                    "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                    },
+                                    "disclose": {
+                                        "caller": true,
+                                        "publisher": true
+                                    },
+                                    "cache": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+                {
+                    "name": "dvl6",
                     "roles": [
                         {
                             "name": "anonymous",
@@ -171,7 +249,33 @@
             "realms": [
 
                 {
-                    "name": "dvl4",
+                    "name": "dvl7",
+                    "roles": [
+                        {
+                            "name": "anonymous",
+                            "permissions": [
+                                {
+                                    "uri": "",
+                                    "match": "prefix",
+                                    "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                    },
+                                    "disclose": {
+                                        "caller": true,
+                                        "publisher": true
+                                    },
+                                    "cache": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+                {
+                    "name": "dvl8",
                     "roles": [
                         {
                             "name": "anonymous",
@@ -223,7 +327,33 @@
             "realms": [
 
                 {
-                    "name": "dvl5",
+                    "name": "dvl9",
+                    "roles": [
+                        {
+                            "name": "anonymous",
+                            "permissions": [
+                                {
+                                    "uri": "",
+                                    "match": "prefix",
+                                    "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                    },
+                                    "disclose": {
+                                        "caller": true,
+                                        "publisher": true
+                                    },
+                                    "cache": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+                {
+                    "name": "dvl10",
                     "roles": [
                         {
                             "name": "anonymous",
@@ -255,162 +385,6 @@
                     "endpoint": {
                         "type": "unix",
                         "path": "rtr_4.sock"
-                    },
-                    "options": {
-                        "max_message_size": 1048576
-                    },
-                    "serializers": ["cbor"],
-                    "auth": {
-                        "anonymous-proxy": {
-                            "type": "static"
-                        }
-                    }
-                }
-            ]
-        },
-
-        {
-            "id": "rtr_5",
-            "type": "router",
-            "realms": [
-
-                {
-                    "name": "dvl6",
-                    "roles": [
-                        {
-                            "name": "anonymous",
-                            "permissions": [
-                                {
-                                    "uri": "",
-                                    "match": "prefix",
-                                    "allow": {
-                                        "call": true,
-                                        "register": true,
-                                        "publish": true,
-                                        "subscribe": true
-                                    },
-                                    "disclose": {
-                                        "caller": true,
-                                        "publisher": true
-                                    },
-                                    "cache": true
-                                }
-                            ]
-                        }
-                    ]
-                }
-
-            ],
-            "transports": [
-                {
-                    "type": "rawsocket",
-                    "endpoint": {
-                        "type": "unix",
-                        "path": "rtr_5.sock"
-                    },
-                    "options": {
-                        "max_message_size": 1048576
-                    },
-                    "serializers": ["cbor"],
-                    "auth": {
-                        "anonymous-proxy": {
-                            "type": "static"
-                        }
-                    }
-                }
-            ]
-        },
-
-        {
-            "id": "rtr_6",
-            "type": "router",
-            "realms": [
-
-                {
-                    "name": "dvl7",
-                    "roles": [
-                        {
-                            "name": "anonymous",
-                            "permissions": [
-                                {
-                                    "uri": "",
-                                    "match": "prefix",
-                                    "allow": {
-                                        "call": true,
-                                        "register": true,
-                                        "publish": true,
-                                        "subscribe": true
-                                    },
-                                    "disclose": {
-                                        "caller": true,
-                                        "publisher": true
-                                    },
-                                    "cache": true
-                                }
-                            ]
-                        }
-                    ]
-                }
-
-            ],
-            "transports": [
-                {
-                    "type": "rawsocket",
-                    "endpoint": {
-                        "type": "unix",
-                        "path": "rtr_6.sock"
-                    },
-                    "options": {
-                        "max_message_size": 1048576
-                    },
-                    "serializers": ["cbor"],
-                    "auth": {
-                        "anonymous-proxy": {
-                            "type": "static"
-                        }
-                    }
-                }
-            ]
-        },
-
-        {
-            "id": "rtr_7",
-            "type": "router",
-            "realms": [
-
-                {
-                    "name": "dvl8",
-                    "roles": [
-                        {
-                            "name": "anonymous",
-                            "permissions": [
-                                {
-                                    "uri": "",
-                                    "match": "prefix",
-                                    "allow": {
-                                        "call": true,
-                                        "register": true,
-                                        "publish": true,
-                                        "subscribe": true
-                                    },
-                                    "disclose": {
-                                        "caller": true,
-                                        "publisher": true
-                                    },
-                                    "cache": true
-                                }
-                            ]
-                        }
-                    ]
-                }
-
-            ],
-            "transports": [
-                {
-                    "type": "rawsocket",
-                    "endpoint": {
-                        "type": "unix",
-                        "path": "rtr_7.sock"
                     },
                     "options": {
                         "max_message_size": 1048576
@@ -491,42 +465,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -537,31 +475,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },
@@ -719,42 +665,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -765,31 +675,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },
@@ -947,42 +865,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -993,31 +875,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },
@@ -1175,42 +1065,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -1221,31 +1075,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },
@@ -1403,42 +1265,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -1449,31 +1275,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },
@@ -1631,42 +1465,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -1677,31 +1475,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },
@@ -1859,42 +1665,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -1905,31 +1675,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },
@@ -2087,42 +1865,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -2133,31 +1875,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },
@@ -2315,42 +2065,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -2361,31 +2075,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },
@@ -2543,42 +2265,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -2589,31 +2275,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },
@@ -2771,42 +2465,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -2817,31 +2475,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },
@@ -2999,42 +2665,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -3045,31 +2675,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },
@@ -3227,42 +2865,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -3273,31 +2875,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },
@@ -3455,42 +3065,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -3501,31 +3075,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },
@@ -3683,42 +3265,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -3729,31 +3275,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },
@@ -3911,42 +3465,6 @@
                         "url": "ws://localhost",
                         "serializer": "cbor"
                     }
-                },
-
-                "cnc_5": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_5.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_6": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_6.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
-                },
-
-                "cnc_7": {
-                    "transport": {
-                        "type": "rawsocket",
-                        "endpoint": {
-                            "type": "unix",
-                            "path": "rtr_7.sock"
-                        },
-                        "url": "ws://localhost",
-                        "serializer": "cbor"
-                    }
                 }
                 
             },
@@ -3957,31 +3475,39 @@
                 },
 
                 "dvl2": {
-                    "anonymous": "cnc_1"
+                    "anonymous": "cnc_0"
                 },
 
                 "dvl3": {
-                    "anonymous": "cnc_2"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl4": {
-                    "anonymous": "cnc_3"
+                    "anonymous": "cnc_1"
                 },
 
                 "dvl5": {
-                    "anonymous": "cnc_4"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl6": {
-                    "anonymous": "cnc_5"
+                    "anonymous": "cnc_2"
                 },
 
                 "dvl7": {
-                    "anonymous": "cnc_6"
+                    "anonymous": "cnc_3"
                 },
 
                 "dvl8": {
-                    "anonymous": "cnc_7"
+                    "anonymous": "cnc_3"
+                },
+
+                "dvl9": {
+                    "anonymous": "cnc_4"
+                },
+
+                "dvl10": {
+                    "anonymous": "cnc_4"
                 }
 
             },

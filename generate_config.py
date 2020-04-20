@@ -60,7 +60,7 @@ else:
 params = {
     'parallel_router': config_routers,
     'parallel_proxy': config_proxies,
-    'realm_names': ['dvl{}'.format(i + 1) for i in range(8)]
+    'realm_names': ['dvl{}'.format(i + 1) for i in range(10)]
 }
 assert len(params['realm_names']) >= params['parallel_router']
 
